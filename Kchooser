@@ -235,10 +235,10 @@ my @temp = '';
 
 
 
-@args = ('jellyfish', 'count', '-C', '-o', 'output', '-s', '10000000', '-t', '3', "$theFastaFile", '-m', "$Kvalue");
+@args = ('jellyfish', 'count', '-C', '-o', 'output_0', '-s', '10000000', '-t', '3', "$theFastaFile", '-m', "$Kvalue");
 system(@args) == 0 or die "system @args failed: $!";
 
-my $cmd = 'jellyfish dump output -c > jellyout.txt';
+my $cmd = 'jellyfish dump output_0 -c > jellyout.txt';
 system($cmd) == 0 or die "system @args failed: $!";
 
 open (INFILE, 'jellyout.txt') or die "Can't open jellyout.txt for reading. $!";
